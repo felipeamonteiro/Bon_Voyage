@@ -10,13 +10,13 @@ const Color headerColor = Color(0xFF162F4D);
 
 const defaultPadding = EdgeInsets.all(16);
 
-class DefalutButton extends StatelessWidget {
+class DefaultButton extends StatelessWidget {
 
   final Color colorButton;
   final String buttonText;
   final VoidCallback? onPressed;
 
-  const DefalutButton({super.key, required this.buttonText, this.onPressed, required this.colorButton});
+  const DefaultButton({super.key, required this.buttonText, this.onPressed, required this.colorButton});
 
   @override
   Widget build(BuildContext context) {

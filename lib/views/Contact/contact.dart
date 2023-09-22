@@ -166,7 +166,7 @@ class _ContactUsState extends State<ContactUs> {
                   const SizedBox(
                     height: 30,
                   ),
-                  DefalutButton(
+                  DefaultButton(
                     buttonText: 'Enviar',
                     colorButton: btnColor,
                     onPressed: () {

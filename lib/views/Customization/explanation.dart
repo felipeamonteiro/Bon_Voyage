@@ -81,7 +81,7 @@ class _ExplanationState extends State<Explanation> {
             const SizedBox(
               height: 40,
             ),
-            DefalutButton(
+            DefaultButton(
               buttonText: 'Faça sua Viajem',
               colorButton: btnColor,
               onPressed: () {},

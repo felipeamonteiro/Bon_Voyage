@@ -1,5 +1,6 @@
 import 'package:bon_voyage/modules/constants.dart';
 import 'package:bon_voyage/views/About%20Us/about_us.dart';
+import 'package:bon_voyage/views/Registro%20Firebase/Cadastro/cadastro.dart';
 import 'package:bon_voyage/views/Contact/contact.dart';
 import 'package:bon_voyage/views/Customization/explanation.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +39,7 @@ class _LandingPageState extends State<LandingPage> {
             const SizedBox(
               height: 30,
             ),
-            DefalutButton(
+            DefaultButton(
               buttonText: 'Saiba Mais',
               colorButton: btnColor,
               onPressed: () {
@@ -139,13 +140,14 @@ class _LandingPageState extends State<LandingPage> {
                     ),
                     Align(
                         alignment: Alignment.centerLeft,
-                        child: DefalutButton(
+                        child: DefaultButton(
                           colorButton: Colors.white54,
                           buttonText: 'Saiba Mais',
                           onPressed: () {
                             Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => const Explanation()));
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Explanation()));
                           },
                         )),
                   ],
@@ -188,23 +190,28 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                   Align(
                       alignment: Alignment.centerLeft,
-                      child: DefalutButton(
+                      child: DefaultButton(
                         colorButton: btnColor,
                         buttonText: 'Entre em Contato',
                         onPressed: () {
                           Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const ContactUs())
-                          );
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const ContactUs()));
                         },
                       )),
                   const SizedBox(
                     height: 30,
                   ),
-                  DefalutButton(
+                  DefaultButton(
                     colorButton: btnColor,
                     buttonText: 'Registrar',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Cadastro()));
+                    },
                   )
                 ],
               ),
