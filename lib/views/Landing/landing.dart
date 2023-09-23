@@ -1,6 +1,6 @@
 import 'package:bon_voyage/modules/constants.dart';
-import 'package:bon_voyage/views/About%20Us/about_us.dart';
-import 'package:bon_voyage/views/Registro%20Firebase/Cadastro/cadastro.dart';
+import 'package:bon_voyage/views/About_Us/about_us.dart';
+import 'package:bon_voyage/views/Registro_Firebase/Cadastro/cadastro.dart';
 import 'package:bon_voyage/views/Contact/contact.dart';
 import 'package:bon_voyage/views/Customization/explanation.dart';
 import 'package:flutter/material.dart';

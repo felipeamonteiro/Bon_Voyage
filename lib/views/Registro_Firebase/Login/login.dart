@@ -1,7 +1,7 @@
 import 'package:bon_voyage/modules/constants.dart';
-import 'package:bon_voyage/views/Registro%20Firebase/Cadastro/cadastro.dart';
-import 'package:bon_voyage/views/Home/bottom_bar.dart';
-import 'package:bon_voyage/views/Registro%20Firebase/Recuperar%20Senha/recuperar_senha.dart';
+import 'package:bon_voyage/views/Registro_Firebase/Cadastro/cadastro.dart';
+import 'package:bon_voyage/views/Navigation/bottom_bar.dart';
+import 'package:bon_voyage/views/Registro_Firebase/Recuperar_Senha/recuperar_senha.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:bon_voyage/components/auth_repository.dart';
@@ -98,7 +98,9 @@ class _LogInState extends State<LogIn> {
                       ),
                       Row(
                         children: [
-                          TextButton(
+                          DefaultTextButton(
+                            textButtonText: 'Esqueceu a Senha?',
+                            fontSize: 14,
                             onPressed: () {
                               Navigator.push(
                                   context,
@@ -106,10 +108,6 @@ class _LogInState extends State<LogIn> {
                                       builder: (context) =>
                                           const RecuperarSenha()));
                             },
-                            child: const Text(
-                              'Esqueceu a Senha?',
-                              style: TextStyle(color: linkColor),
-                            ),
                           )
                         ],
                       ),
@@ -126,20 +124,16 @@ class _LogInState extends State<LogIn> {
                               _login();
                             },
                           ),
-                          MaterialButton(
+                          DefaultTextButton(
+                            textButtonText: 'Cadastrar-se',
+                            fontSize: 18,
                             onPressed: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => const Cadastro()));
                             },
-                            child: const Text(
-                              'Cadastrar-se',
-                              style: TextStyle(
-                                  fontSize: 18, 
-                                  color: linkColor),
-                            ),
-                          ),
+                          )
                         ],
                       ),
                     ],

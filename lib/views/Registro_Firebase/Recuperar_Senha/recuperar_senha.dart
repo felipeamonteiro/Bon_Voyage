@@ -1,5 +1,5 @@
 import 'package:bon_voyage/modules/constants.dart';
-import 'package:bon_voyage/views/Registro%20Firebase/Login/login.dart';
+import 'package:bon_voyage/views/Registro_Firebase/Login/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
