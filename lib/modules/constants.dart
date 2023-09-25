@@ -108,3 +108,26 @@ class SettingsItems extends StatelessWidget {
     );
   }
 }
+
+class ProfileInput extends StatelessWidget {
+
+   final String hintText;
+
+  const ProfileInput({super.key, required this.hintText});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      enabled: false,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20)
+        ),
+        hintText: hintText,
+        hintStyle: const TextStyle(
+          color: Colors.black
+        )
+      ),
+    );
+  }
+}

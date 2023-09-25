@@ -1,5 +1,4 @@
 import 'package:bon_voyage/modules/constants.dart';
-import 'package:bon_voyage/views/Registro_Firebase/Login/login.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -252,10 +251,7 @@ class _CadastroState extends State<Cadastro> {
                           textButtonText: 'Já tenho uma conta',
                           fontSize: 18,
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const LogIn()));
+                            Navigator.pop(context);
                           },
                         )
                       ],

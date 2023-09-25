@@ -1,8 +1,8 @@
 import 'package:bon_voyage/modules/constants.dart';
 import 'package:bon_voyage/views/About_Us/about_us.dart';
-import 'package:bon_voyage/views/Registro_Firebase/Cadastro/cadastro.dart';
 import 'package:bon_voyage/views/Contact/contact.dart';
 import 'package:bon_voyage/views/Customization/explanation.dart';
+import 'package:bon_voyage/views/Registro_Firebase/Login/login.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatefulWidget {
@@ -210,7 +210,7 @@ class _LandingPageState extends State<LandingPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const Cadastro()));
+                              builder: (context) => const LogIn()));
                     },
                   )
                 ],

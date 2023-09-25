@@ -1,6 +1,7 @@
 import 'package:bon_voyage/modules/constants.dart';
 import 'package:bon_voyage/views/About_Us/about_us.dart';
 import 'package:bon_voyage/views/Contact/contact.dart';
+import 'package:bon_voyage/views/Profile/profile.dart';
 import 'package:flutter/material.dart';
 
 class Settings extends StatefulWidget {
@@ -42,7 +43,8 @@ class _SettingsState extends State<Settings> {
               iconSettingsItem: Icons.account_circle,
               textSettingsItem: 'Gerenciar Conta',
               onPressed: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => const Profile));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Profile()));
               },
               sizedBox: 130),
           const Divider(
