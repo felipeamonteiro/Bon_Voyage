@@ -1,6 +1,7 @@
+import 'package:bon_voyage/modules/apigoogle.dart';
 import 'package:flutter/material.dart';
 
-const String apiKey = 'AIzaSyDDd4BZ8waWzBTYdZd5pr2MBu2DnmK0Wv4';
+const String apiKey = apiGoogle;
 const String apiPassagensJson =
     'https://raw.githubusercontent.com/LuizLimaG/APIPassagens/main/app.json';
 
@@ -80,14 +81,16 @@ class SettingsItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       child: Row(
         children: [
           Icon(
             iconSettingsItem,
             size: 30,
           ),
-          const SizedBox(width: 10,),
+          const SizedBox(
+            width: 10,
+          ),
           Text(
             textSettingsItem,
             style: const TextStyle(
@@ -95,7 +98,9 @@ class SettingsItems extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(width: sizedBox,),
+          SizedBox(
+            width: sizedBox,
+          ),
           IconButton(
             onPressed: onPressed,
             icon: const Icon(
@@ -110,8 +115,7 @@ class SettingsItems extends StatelessWidget {
 }
 
 class ProfileInput extends StatelessWidget {
-
-   final String hintText;
+  final String hintText;
 
   const ProfileInput({super.key, required this.hintText});
 
@@ -120,12 +124,60 @@ class ProfileInput extends StatelessWidget {
     return TextFormField(
       enabled: false,
       decoration: InputDecoration(
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20)
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
+          hintText: hintText,
+          hintStyle: const TextStyle(color: Colors.black)),
+    );
+  }
+}
+
+class CustomRadioButton extends StatelessWidget {
+  final int index;
+  final int selectedIndex;
+  final ValueChanged<int> onChanged;
+  final String text;
+  final Icon icon;
+
+  const CustomRadioButton({super.key, 
+    required this.index,
+    required this.selectedIndex,
+    required this.onChanged,
+    required this.text, 
+    required this.icon
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        onChanged(index);
+      },
+      child: Container(
+        width: 200,
+        height: 150,
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: index == selectedIndex ? Colors.blue : Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            color: Colors.black,
+            width: 1,
+          ),
         ),
-        hintText: hintText,
-        hintStyle: const TextStyle(
-          color: Colors.black
+        alignment: Alignment.center,
+        child: Row(
+          children: [
+            icon,
+            const SizedBox(width: 10,),
+            Text(
+              text,
+              style: const TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 20,
+                fontWeight: FontWeight.bold
+              ),
+            )
+          ],
         )
       ),
     );

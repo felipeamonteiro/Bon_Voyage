@@ -1,5 +1,5 @@
 import 'package:bon_voyage/modules/constants.dart';
-import 'package:bon_voyage/views/Profile/delete.dart';
+import 'package:bon_voyage/views/Navigation/Settings/Profile/delete.dart';
 import 'package:bon_voyage/views/Registro_Firebase/Login/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';

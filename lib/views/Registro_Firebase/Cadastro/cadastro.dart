@@ -1,4 +1,5 @@
 import 'package:bon_voyage/modules/constants.dart';
+import 'package:bon_voyage/views/Registro_Firebase/Login/login.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -60,10 +61,10 @@ class _CadastroState extends State<Cadastro> {
         _showSnackbar(
             'Conta criada com sucesso. Verifique seu e-mail para ativar sua conta.');
 
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(builder: (context) => const LogIn())
-        // );
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const LogIn())
+        );
       } catch (e) {
         _showSnackbar('Erro ao criar conta: $e');
       }

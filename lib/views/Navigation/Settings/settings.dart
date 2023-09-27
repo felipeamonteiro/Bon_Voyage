@@ -1,7 +1,8 @@
 import 'package:bon_voyage/modules/constants.dart';
-import 'package:bon_voyage/views/About_Us/about_us.dart';
-import 'package:bon_voyage/views/Contact/contact.dart';
-import 'package:bon_voyage/views/Profile/profile.dart';
+import 'package:bon_voyage/views/Info/About_Us/about_us.dart';
+import 'package:bon_voyage/views/Info/Contact/contact.dart';
+import 'package:bon_voyage/views/Navigation/Settings/MyHouse/cadastro_casa.dart';
+import 'package:bon_voyage/views/Navigation/Settings/Profile/profile.dart';
 import 'package:flutter/material.dart';
 
 class Settings extends StatefulWidget {
@@ -131,7 +132,10 @@ class _SettingsState extends State<Settings> {
               iconSettingsItem: Icons.home_filled,
               textSettingsItem: 'Minhas Casas',
               onPressed: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => const MyHouse()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const CadastroCasas()));
               },
               sizedBox: 150),
           const Divider(

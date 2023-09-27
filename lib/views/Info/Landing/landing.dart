@@ -1,7 +1,7 @@
 import 'package:bon_voyage/modules/constants.dart';
-import 'package:bon_voyage/views/About_Us/about_us.dart';
-import 'package:bon_voyage/views/Contact/contact.dart';
-import 'package:bon_voyage/views/Customization/explanation.dart';
+import 'package:bon_voyage/views/Info/About_Us/about_us.dart';
+import 'package:bon_voyage/views/Info/Contact/contact.dart';
+import 'package:bon_voyage/views/Navigation/Customization/explanation.dart';
 import 'package:bon_voyage/views/Registro_Firebase/Login/login.dart';
 import 'package:flutter/material.dart';
 
