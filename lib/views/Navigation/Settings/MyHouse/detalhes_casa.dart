@@ -1,4 +1,5 @@
 import 'package:bon_voyage/modules/constants.dart';
+import 'package:bon_voyage/views/Navigation/Settings/MyHouse/foto_casa.dart';
 import 'package:flutter/material.dart';
 
 class DetalheCasa extends StatefulWidget {
@@ -199,7 +200,9 @@ class _DetalheCasaState extends State<DetalheCasa> {
               DefaultButton(
                 buttonText: 'Avançar',
                 colorButton: btnColor,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const FotoCasa()));
+                },
               )
             ],
           ),
