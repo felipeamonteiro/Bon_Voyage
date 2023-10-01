@@ -1,20 +1,21 @@
 import 'package:bon_voyage/modules/constants.dart';
+import 'package:bon_voyage/views/Navigation/Settings/MyHouse/detalhes_casa.dart';
 import 'package:flutter/material.dart';
 
-class Etapa6 extends StatefulWidget {
-  const Etapa6({super.key});
+class Endereco extends StatefulWidget {
+  const Endereco({super.key});
 
   @override
-  State<Etapa6> createState() => _Etapa6State();
+  State<Endereco> createState() => _EnderecoState();
 }
 
-class _Etapa6State extends State<Etapa6> {
+class _EnderecoState extends State<Endereco> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: defaultPadding,
           child: Column(
             children: [
               const Text(
@@ -105,7 +106,12 @@ class _Etapa6State extends State<Etapa6> {
               DefaultButton(
                 buttonText: 'Avançar',
                 colorButton: btnColor,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const DetalheCasa()));
+                },
               )
             ],
           ),

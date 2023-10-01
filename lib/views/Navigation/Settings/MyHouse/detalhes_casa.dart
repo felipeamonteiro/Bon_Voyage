@@ -67,7 +67,7 @@ class _DetalheCasaState extends State<DetalheCasa> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: defaultPadding,
           child: Column(
             children: [
               const Text(

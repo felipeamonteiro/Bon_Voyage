@@ -138,13 +138,13 @@ class CustomRadioButton extends StatelessWidget {
   final String text;
   final Icon icon;
 
-  const CustomRadioButton({super.key, 
-    required this.index,
-    required this.selectedIndex,
-    required this.onChanged,
-    required this.text, 
-    required this.icon
-  });
+  const CustomRadioButton(
+      {super.key,
+      required this.index,
+      required this.selectedIndex,
+      required this.onChanged,
+      required this.text,
+      required this.icon});
 
   @override
   Widget build(BuildContext context) {
@@ -153,32 +153,107 @@ class CustomRadioButton extends StatelessWidget {
         onChanged(index);
       },
       child: Container(
-        width: 200,
+          width: 200,
+          height: 150,
+          padding: const EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            color: index == selectedIndex ? Colors.blue : Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: Colors.black,
+              width: 1,
+            ),
+          ),
+          alignment: Alignment.center,
+          child: Row(
+            children: [
+              icon,
+              const SizedBox(
+                width: 10,
+              ),
+              Text(
+                text,
+                style: const TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              )
+            ],
+          )),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  final int index;
+  final int selectedIndex;
+  final ValueChanged<int> onChanged;
+  final String text1;
+  final String text2;
+  final double size;
+  final Icon icon;
+
+  const CustomButton(
+      {super.key,
+      required this.index,
+      required this.selectedIndex,
+      required this.onChanged,
+      required this.text1,
+      required this.icon, 
+      required this.text2, 
+      required this.size});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        onChanged(index);
+      },
+      child: Container(
+        width: double.infinity,
         height: 150,
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: index == selectedIndex ? Colors.blue : Colors.white,
+          color: Colors.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: Colors.black,
-            width: 1,
+            color: index == selectedIndex ? Colors.black : Colors.grey,
+            width: index == selectedIndex ? 3 : 1,
           ),
         ),
         alignment: Alignment.center,
-        child: Row(
-          children: [
-            icon,
-            const SizedBox(width: 10,),
-            Text(
-              text,
-              style: const TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 20,
-                fontWeight: FontWeight.bold
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20),
+          child: Row(
+            children: [
+              Column(
+                children: [
+                  Text(
+                    text1,
+                    style: const TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 10,),
+                  Text(
+                    text2,
+                    textAlign: TextAlign.start,
+                    style: const TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400
+                    ),
+                  )
+                ],
               ),
-            )
-          ],
-        )
+              SizedBox(
+                width: size,
+              ),
+              icon,
+            ],
+          ),
+        ),
       ),
     );
   }

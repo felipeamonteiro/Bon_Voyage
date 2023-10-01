@@ -1,5 +1,5 @@
 import 'package:bon_voyage/modules/constants.dart';
-import 'package:bon_voyage/views/Navigation/Settings/MyHouse/detalhes_casa.dart';
+import 'package:bon_voyage/views/Navigation/Settings/MyHouse/endereco.dart';
 import 'package:flutter/material.dart';
 
 class TipoCasa extends StatefulWidget {
@@ -23,7 +23,7 @@ class _TipoCasaState extends State<TipoCasa> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: defaultPadding,
           child: Column(
             children: [
               Row(
@@ -121,7 +121,7 @@ class _TipoCasaState extends State<TipoCasa> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const DetalheCasa()));
+                          builder: (context) => const Endereco()));
                 },
               )
             ],

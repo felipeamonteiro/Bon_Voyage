@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:bon_voyage/modules/constants.dart';
+import 'package:bon_voyage/views/Navigation/Settings/MyHouse/titulo_casa.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -103,7 +104,10 @@ class _FotoCasaState extends State<FotoCasa> {
                 buttonText: 'Avançar',
                 colorButton: btnColor,
                 onPressed: () {
-                  
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const TituloCasa()));
                 },
               )
             ],
