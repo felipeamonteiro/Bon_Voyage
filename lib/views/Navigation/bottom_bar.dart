@@ -1,3 +1,4 @@
+import 'package:bon_voyage/views/Navigation/Passagens/passagens.dart';
 import 'package:bon_voyage/views/Navigation/Settings/settings.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +53,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         children: const [
           // Home(),
           // Guide(),
-          // Passagens(),
+          Passagens(),
           // Hospedagem(),
           Settings()
         ],

@@ -1,4 +1,5 @@
 import 'package:bon_voyage/modules/apigoogle.dart';
+import 'package:bon_voyage/views/Navigation/Passagens/detalhes.dart';
 import 'package:flutter/material.dart';
 
 const String apiKey = apiGoogle;
@@ -199,8 +200,8 @@ class CustomButton extends StatelessWidget {
       required this.selectedIndex,
       required this.onChanged,
       required this.text1,
-      required this.icon, 
-      required this.text2, 
+      required this.icon,
+      required this.text2,
       required this.size});
 
   @override
@@ -235,15 +236,16 @@ class CustomButton extends StatelessWidget {
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
-                  const SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Text(
                     text2,
                     textAlign: TextAlign.start,
                     style: const TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400
-                    ),
+                        fontFamily: 'Poppins',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400),
                   )
                 ],
               ),
@@ -253,6 +255,104 @@ class CustomButton extends StatelessWidget {
               icon,
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class ContainerPassagens extends StatelessWidget {  
+  final String image;
+  final String localViagem;
+  final String precoPassagem;
+
+  const ContainerPassagens(
+      {super.key,
+      required this.image,
+      required this.localViagem,
+      required this.precoPassagem});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => DetalhesPassagem(
+              image: image,
+              localViagem: localViagem,
+              precoPassagem: precoPassagem,
+            ),
+          ),
+        );
+      },
+      child: Container(
+        width: double.infinity,
+        height: 340,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.white,
+            boxShadow: const [
+              BoxShadow(
+                  color: Colors.black54,
+                  offset: Offset(0, 2),
+                  blurRadius: 8,
+                  spreadRadius: 0)
+            ]),
+        child: Column(
+          children: [
+            AspectRatio(
+              aspectRatio: 16 / 9,
+              child: FractionallySizedBox(
+                widthFactor: 1.0,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                    image,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.directions_bus_sharp,
+                  size: 30,
+                  color: Colors.grey,
+                ),
+                Icon(
+                  Icons.flight_takeoff,
+                  size: 30,
+                  color: Colors.grey,
+                )
+              ],
+            ),
+            Text(
+              localViagem,
+              style: const TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            Text(
+              precoPassagem,
+              style: const TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const Text('Por pessoa')
+          ],
         ),
       ),
     );
